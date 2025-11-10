@@ -13,14 +13,17 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    container: golang:1.24
     steps:
     - uses: actions/checkout@v4
-        
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.24'
+
     - name: Vet
       run: |
         go vet ./...
-        go mod tidy
       
     - name: Build
       run: go build -v ./...
