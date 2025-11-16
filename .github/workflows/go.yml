@@ -9,12 +9,11 @@ on:
       - devel
     paths:
       - '**.go'
+    tags:
+      - 'v*'
   pull_request:
     branches: 
       - main
-    tags:
-      - 'v*'	
-    
 
 jobs:
   build:
